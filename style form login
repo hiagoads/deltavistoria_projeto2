@@ -1,0 +1,76 @@
+/* Botão Principal */
+.btn-admin {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btn-admin:hover {
+    background-color: #0056b3;
+}
+
+/* O Fundo Escuro (Overlay) */
+.modal-overlay {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(3px); /* Efeito de desfoque no fundo */
+    animation: fadeIn 0.4s;
+    font-family: "montserrat";
+}
+
+/* A Caixa do Modal */
+.modal-content {
+    background-color: white;
+    margin: 8vh auto; /* Margem superior dinâmica */
+    width: 70%;
+    max-width: 850px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; /* Cria o layout lado a lado */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* Lado Esquerdo (Imagem) */
+.modal-left {
+    flex: 1;
+    /* Substitua a URL abaixo pela imagem que você quiser */
+    background: url('img/loginadm.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 450px;
+}
+
+/* Lado Direito (Formulário) */
+.modal-right {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Botão Fechar (X) */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-btn:hover {
+    color: #333;
+}
