@@ -5,6 +5,7 @@
 $titulo_pagina = "Cadastrar Agendamento";
 require_once 'config.inc.php';
 require_once '../includes/topo.php';
+require_once '../includes/menu.php';
 // Buscar clientes para o select
 $stmt = $pdo->query("SELECT id, nome, tipo_pessoa FROM clientes ORDER BY nome");
 $clientes = $stmt->fetchAll();

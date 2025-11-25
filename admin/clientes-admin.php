@@ -5,6 +5,7 @@
 $titulo_pagina = "Gerenciar Clientes";
 require_once 'config.inc.php';
 require_once '../includes/topo.php';
+require_once '../includes/menu.php';
 
 // Paginação
 $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;

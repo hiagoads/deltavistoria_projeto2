@@ -1,7 +1,7 @@
 <?php
 
-    include_once("topo.php");
-    include_once("menu.php");
+    require_once '../includes/topo.php';
+    require_once '../includes/menu.php';
 
     // verifica se a solicitação do usuario via get estiver vazia ele abre por padrão a página da variável pg
     if (empty($_SERVER["QUERY_STRING"])) {
@@ -11,6 +11,7 @@
         $pg = $_GET['pg'];
         include_once("$pg.php");
     }
-    
-    include_once("rodape.php");
+
 ?>
+
+<?php require_once '../includes/rodape.php'; ?>
