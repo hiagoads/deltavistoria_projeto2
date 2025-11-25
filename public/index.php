@@ -1,6 +1,5 @@
 <?php
 
-    require_once '../includes/topo.php';
     require_once '../includes/menu.php';
 
     // verifica se a solicitação do usuario via get estiver vazia ele abre por padrão a página da variável pg

@@ -5,7 +5,6 @@
 session_start();
 require_once '../includes/config.php';
 require_once 'config.inc.php';
-require_once '../includes/topo.php';
 require_once '../includes/menu.php';
 
 // Verificar se é POST

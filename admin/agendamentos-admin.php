@@ -4,7 +4,6 @@
  */
 $titulo_pagina = "Gerenciar Agendamentos";
 require_once 'config.inc.php';
-require_once '../includes/topo.php';
 require_once '../includes/menu.php';
 
 // Paginação

@@ -5,7 +5,6 @@
  */
 $titulo_pagina = "Editar Cliente";
 require_once 'config.inc.php';
-require_once '../includes/topo.php';
 require_once '../includes/menu.php';
 
 // Verificar se o ID foi passado

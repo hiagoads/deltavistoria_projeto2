@@ -5,7 +5,7 @@
  */
 $titulo_pagina = "Dashboard Administrativo";
 require_once 'config.inc.php';
-require_once '../includes/topo.php';
+require_once '../includes/menu.php';
 ?>
 
 <div class="main-content">
