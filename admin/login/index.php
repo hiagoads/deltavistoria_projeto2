@@ -4,7 +4,7 @@
  * Rota separada: /admin/login/
  */
 $titulo_pagina = "Login Administrativo";
-require_once '../../includes/topo.php'; // CORREÇÃO: ../../ para voltar 2 pastas
+require_once '../../includes/menu.php'; // CORREÇÃO: ../../ para voltar 2 pastas
 
 // Se usuário já está logado, redireciona
 if (isset($_SESSION['usuario'])) {
