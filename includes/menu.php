@@ -3,13 +3,29 @@
  * Cabeçalho Universal - Delta Vistoria
  */
 
-$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
-$host = $_SERVER['HTTP_HOST'];
-$project_path = '/deltavistoria_projeto2';
-$base_url = $protocol . "://" . $host . $project_path;
+function getBaseUrl() {
+    // Detectar protocolo corretamente
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || 
+                $_SERVER['SERVER_PORT'] == 443 ? "https://" : "http://";
+    
+    $host = $_SERVER['HTTP_HOST'];
+    $project = '/deltavistoria_projeto2';
+    
+    // Garantir formato correto
+    $url = $protocol . $host . $project;
+    $url = rtrim($url, '/');
+    
+    return $url;
+}
+
+$base_url = getBaseUrl();
 
 // Determinar a página atual para a classe 'active'
 $pagina_atual = basename($_SERVER['PHP_SELF']);
+
+// DEBUG: Para verificar se está gerando corretamente
+// echo "<!-- Base URL: " . $base_url . " -->";
+// echo "<!-- Página atual: " . $pagina_atual . " -->";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
