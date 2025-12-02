@@ -38,7 +38,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                 <?php if (isset($_SESSION['usuario'])): ?>
                     <!-- Menu para admin logado -->
                     <ul class="nav-menu">
-                        <li><a href="<?php echo $base_url; ?>/admin/login.php" class="<?php echo $pagina_atual == 'login.php' ? 'active' : ''; ?>">Dashboard</a></li>
+                        <li><a href="<?php echo $base_url; ?>/admin/index.php" class="<?php echo $pagina_atual == 'index.php' ? 'active' : ''; ?>">Dashboard</a></li>
                         <li><a href="<?php echo $base_url; ?>/admin/clientes-admin.php" class="<?php echo strpos($pagina_atual, 'clientes-') !== false ? 'active' : ''; ?>">Clientes</a></li>
                         <li><a href="<?php echo $base_url; ?>/admin/agendamentos-admin.php" class="<?php echo strpos($pagina_atual, 'agendamentos-') !== false ? 'active' : ''; ?>">Agendamentos</a></li>
                     </ul>
