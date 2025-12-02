@@ -1,0 +1,26 @@
+#Configuração Servidor/Banco
+includes/config.php
+admin/config.inc.php
+
+#Banco de dados
+delta_vistoria.sql
+
+*.env
+
+.env.local
+
+.DS_Store
+
+.idea/
+
+.vscode/
+
+*.log
+
+error_log
+
+/tmp/
+
+/sessions/
+
+*.bak
