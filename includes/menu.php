@@ -4,28 +4,16 @@
  */
 
 function getBaseUrl() {
-    // Detectar protocolo corretamente
     $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || 
                 $_SERVER['SERVER_PORT'] == 443 ? "https://" : "http://";
-    
     $host = $_SERVER['HTTP_HOST'];
     $project = '/deltavistoria_projeto2';
-    
-    // Garantir formato correto
     $url = $protocol . $host . $project;
-    $url = rtrim($url, '/');
-    
-    return $url;
+    return rtrim($url, '/');
 }
 
 $base_url = getBaseUrl();
-
-// Determinar a página atual para a classe 'active'
 $pagina_atual = basename($_SERVER['PHP_SELF']);
-
-// DEBUG: Para verificar se está gerando corretamente
-// echo "<!-- Base URL: " . $base_url . " -->";
-// echo "<!-- Página atual: " . $pagina_atual . " -->";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -41,16 +29,35 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         }
         ?>
     </title>
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/css/style.css">
+
+    <link rel="stylesheet" href="/deltavistoria_projeto2/css/menu.css">
+    <link rel="stylesheet" href="/deltavistoria_projeto2/css/style.css">
+    
+    <link rel="stylesheet" href="/deltavistoria_projeto2/css/principal.css">
+    <link rel="stylesheet" href="/deltavistoria_projeto2/css/contato.css">
+    
+    <?php if (strpos($_SERVER['PHP_SELF'], '/admin/') !== false): ?>
+        <link rel="stylesheet" href="/deltavistoria_projeto2/css/admin.css">
+    <?php endif; ?>
+
+    <link rel="stylesheet" href="/deltavistoria_projeto2/css/rodape.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>Delta<span>Vistoria</span></h1>
+                <a href="<?php echo $base_url; ?>/public/index.php" class="logo-link">
+                    <img src="/deltavistoria_projeto2/img/logo_br.png" alt="Delta Vistoria Logo" class="logo-img">
+                </a>
             </div>
             
-            <nav class="nav-main">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav-main" id="navMain">
                 <?php if (isset($_SESSION['usuario'])): ?>
                     <!-- Menu para admin logado -->
                     <ul class="nav-menu">
@@ -60,7 +67,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                     </ul>
                     
                     <div class="user-area">
-                        <span>Olá, <strong><?php echo htmlspecialchars($_SESSION['usuario']['nome']); ?></strong></span>
+                        <span>Olá, <strong><?php echo htmlspecialchars($_SESSION['usuario']['nome'] ?? 'Admin'); ?></strong></span>
                         <a href="<?php echo $base_url; ?>/admin/logout.php" class="btn-logout" onclick="return confirm('Deseja sair?')">Sair</a>
                     </div>
                     
@@ -69,7 +76,6 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                     <ul class="nav-menu">
                         <li><a href="<?php echo $base_url; ?>/public/index.php" class="<?php echo $pagina_atual == 'index.php' ? 'active' : ''; ?>">Início</a></li>
                         <li><a href="<?php echo $base_url; ?>/public/principal.php" class="<?php echo $pagina_atual == 'principal.php' ? 'active' : ''; ?>">Serviços</a></li>
-                        <li><a href="<?php echo $base_url; ?>/public/principal.php" class="<?php echo $pagina_atual == 'principal.php' ? 'active' : ''; ?>">Quem Somos</a></li>
                         <li><a href="<?php echo $base_url; ?>/public/contato.php" class="<?php echo $pagina_atual == 'contato.php' ? 'active' : ''; ?>">Contato</a></li>
                         <li><a href="<?php echo $base_url; ?>/public/agendamento.php" class="<?php echo $pagina_atual == 'agendamento.php' ? 'active' : ''; ?>">Solicitar Vistoria</a></li>
                     </ul>
@@ -78,9 +84,8 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         </div>
     </header>
 
-    <main class="main-content">
+    <main>
         <div class="container">
-            <!-- Área para mensagens de sistema -->
             <?php if (isset($_SESSION['sucesso'])): ?>
                 <div class="alert alert-success">
                     <?php echo htmlspecialchars($_SESSION['sucesso']); ?>
@@ -94,3 +99,34 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                     <?php unset($_SESSION['erro']); ?>
                 </div>
             <?php endif; ?>
+
+    <script>
+        // Menu Mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMain = document.getElementById('navMain');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+
+            // Toggle menu ao clicar no hamburger
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMain.classList.toggle('active');
+            });
+
+            // Fechar menu ao clicar em um link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMain.classList.remove('active');
+                });
+            });
+
+            // Fechar menu ao redimensionar a janela
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    hamburger.classList.remove('active');
+                    navMain.classList.remove('active');
+                }
+            });
+        });
+    </script>

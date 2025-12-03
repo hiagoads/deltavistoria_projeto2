@@ -187,3 +187,5 @@ $agendamentos = $stmt->fetchAll();
         <?php endif; ?>
     </div>
 </div>
+
+<?php require_once '../includes/rodape.php'; ?>

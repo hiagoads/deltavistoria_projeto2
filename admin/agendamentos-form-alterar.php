@@ -152,3 +152,5 @@ $hora = date('H:i', strtotime($agendamento['data_horario']));
         </form>
     </div>
 </div>
+
+<?php require_once '../includes/rodape.php'; ?>

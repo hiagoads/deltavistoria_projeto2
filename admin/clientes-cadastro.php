@@ -84,6 +84,8 @@ unset($_SESSION['dados_form']);
     </div>
 </div>
 
+ <?php require_once '../includes/rodape.php'; ?>
+
 <!-- JavaScript para mostrar campos CPF/CNPJ conforme tipo de pessoa -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {

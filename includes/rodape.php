@@ -1,7 +1,13 @@
-<footer class="footer"> 
-        <div>
-            <a href="#inicio">
-                <img src="img/logo_rodape.png" alt="Rodapé" class="footer-logo"> 
+
+        </div><!-- Fecha .container do main-content -->
+    </main><!-- Fecha main -->
+
+    <footer>
+        <div class="container-footer">
+            <div class="footer-content">
+                <p>&copy; <?php echo date('Y'); ?> Delta Vistoria - Todos os direitos reservados.</p>
+                <p>Desenvolvido com ❤️ para melhor atender você.</p>
+            </div>
         </div>
     </footer>
 

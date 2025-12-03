@@ -256,3 +256,5 @@ require_once '../includes/menu.php';
         </div>
     </div>
 </div>
+
+<?php require_once '../includes/rodape.php'; ?>
