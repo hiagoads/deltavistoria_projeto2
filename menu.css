@@ -1,0 +1,387 @@
+/**
+ * ESTILOS DO MENU - Delta Vistoria
+ * Separado do style.css principal
+ */
+
+/* ==================== RESET GLOBAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ==================== CABEÇALHO GERAL ==================== */
+.header {
+    width: 100%;
+    background: linear-gradient(135deg, #1A1A48 0%, #2d2d6f 100%);
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    max-width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* ==================== LOGO ==================== */
+.header .logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    max-width: 250px;
+    object-fit: contain;
+}
+
+/* ==================== NAVEGAÇÃO PRINCIPAL ==================== */
+.nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #a52a2a;
+    transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+    color: #a52a2a;
+    border-bottom: 3px solid #a52a2a;
+    padding-bottom: 5px;
+}
+
+/* ==================== ÁREA DE USUÁRIO ==================== */
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-area span {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.user-area strong {
+    color: #a52a2a;
+}
+
+.btn-logout {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #a52a2a;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-logout:hover {
+    background-color: #8a2222;
+    transform: scale(1.05);
+}
+
+/* ==================== HAMBURGER MENU ==================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 8px;
+    align-self: flex-end;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ==================== CONTEÚDO PRINCIPAL ==================== */
+.main-content {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
+/* ==================== ALERTAS ==================== */
+.alert {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    animation: slideDown 0.3s ease;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== RODAPÉ ==================== */
+footer {
+    width: 100%;
+    background-color: #1A1A48;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 1024px) {
+    .header .container {
+        gap: 30px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+
+    .nav-main {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 0;
+        padding: 10px;
+    }
+
+    .logo-img {
+        height: 50px;
+    }
+
+    /* ==================== MENU MOBILE ==================== */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-main {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #1A1A48 0%, #2d2d6f 100%);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-main.active {
+        max-height: 500px;
+    }
+
+    .nav-menu {
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+        display: block;
+        padding: 12px 20px;
+        border-radius: 0;
+    }
+
+    .nav-menu a.active {
+        background-color: rgba(165, 42, 42, 0.2);
+        border-bottom: none;
+        border-left: 4px solid #a52a2a;
+        padding-left: 16px;
+    }
+
+    .user-area {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 15px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .user-area span {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .btn-logout {
+        font-size: 13px;
+        padding: 10px 16px;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 8px 10px;
+    }
+
+    .header .container {
+        padding: 0;
+    }
+
+    .logo-img {
+        height: 45px;
+    }
+
+    .hamburger span {
+        width: 22px;
+        height: 2.5px;
+        gap: 4px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+
+    .user-area {
+        padding: 12px 16px;
+    }
+
+    .btn-logout {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
