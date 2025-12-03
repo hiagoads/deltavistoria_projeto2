@@ -1,0 +1,403 @@
+/**
+ * ESTILOS DA PÁGINA PRINCIPAL - Delta Vistoria
+ * Carrossel e Diferenciais
+ */
+
+/* ==================== CARROSSEL TELA CHEIA ==================== */
+:root {
+    --header-height: 80px; /* ajustar se o header for maior/menor */
+}
+
+/* tela inteira menos header */
+.carrossel {
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+/* container relativo para posicionamento absoluto dos slides */
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* cada slide ocupa área inteira e é empilhado */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    overflow: hidden;
+}
+
+/* imagem ocupa 100% do container com corte automático */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    z-index: 1;
+}
+
+/* overlay azul translúcido para melhorar legibilidade do texto */
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(22, 22, 69, 0.45); /* R22 G22 B69 com transparência */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* área para texto sobreposto */
+.slide .conteudo {
+    position: absolute;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideInContent 0.8s ease-in-out;
+}
+
+.slide .conteudo h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    text-shadow: 2px 2px 8px rgba(173, 39, 43, 0.5);
+    letter-spacing: 1px;
+    color: #a52a2a;
+    
+}
+
+.slide .conteudo p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 300;
+}
+
+/* animação para conteúdo */
+@keyframes slideInContent {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* controles por radio (mantém lógica anterior) */
+.slides input { 
+    display: none; 
+}
+
+#radio1:checked ~ .slide1 { 
+    opacity: 1; 
+    z-index: 4; 
+}
+
+#radio2:checked ~ .slide2 { 
+    opacity: 1; 
+    z-index: 4; 
+}
+
+#radio3:checked ~ .slide3 { 
+    opacity: 1; 
+    z-index: 4; 
+}
+
+/* ==================== NAVEGAÇÃO DO CARROSSEL ==================== */
+.navegacao {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 20;
+}
+
+.nav-btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+#radio1:checked ~ .navegacao label[for="radio1"],
+#radio2:checked ~ .navegacao label[for="radio2"],
+#radio3:checked ~ .navegacao label[for="radio3"] {
+    background-color: #a52a2a;
+    border-color: #a52a2a;
+    transform: scale(1.2);
+}
+
+/* ==================== SEÇÃO DIFERENCIAIS ==================== */
+.nossos-diferenciais {
+    width: 100%;
+    padding: 60px 20px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: auto;
+}
+
+.nossos-diferenciais > div:first-child {
+    text-align: center;
+    max-width: 600px;
+}
+
+.titulo-diferenciais {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1A1A48;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+}
+
+.paragrafo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ==================== CARTÕES DE DIFERENCIAIS ==================== */
+.cartoes-diferenciais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cartoes-diferenciais div {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cartoes-diferenciais div:hover {
+    border-color: #a52a2a;
+    box-shadow: 0 8px 20px rgba(165, 42, 42, 0.15);
+    transform: translateY(-5px);
+}
+
+.cartoes-diferenciais img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cartoes-diferenciais div:hover img {
+    transform: scale(1.1);
+}
+
+.cartoes-diferenciais p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+.cartoes-diferenciais p.seg {
+    color: #555;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 1024px) {
+    .carrossel {
+        min-height: 400px;
+    }
+
+    .slide .conteudo h2 {
+        font-size: 40px;
+    }
+
+    .slide .conteudo p {
+        font-size: 18px;
+    }
+
+    .titulo-diferenciais {
+        font-size: 28px;
+    }
+
+    .cartoes-diferenciais {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .nossos-diferenciais {
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carrossel {
+        min-height: 300px;
+    }
+
+    .slide .conteudo {
+        padding: 30px 15px;
+    }
+
+    .slide .conteudo h2 {
+        font-size: 32px;
+    }
+
+    .slide .conteudo p {
+        font-size: 16px;
+    }
+
+    .navegacao {
+        bottom: 15px;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        width: 12px;
+        height: 12px;
+    }
+
+    .titulo-diferenciais {
+        font-size: 24px;
+    }
+
+    .paragrafo {
+        font-size: 14px;
+    }
+
+    .cartoes-diferenciais {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .cartoes-diferenciais div {
+        padding: 25px;
+    }
+
+    .cartoes-diferenciais img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cartoes-diferenciais p {
+        font-size: 14px;
+    }
+
+    .nossos-diferenciais {
+        padding: 40px 15px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrossel {
+        min-height: 250px;
+    }
+
+    .slide .conteudo {
+        padding: 20px 15px;
+    }
+
+    .slide .conteudo h2 {
+        font-size: 24px;
+    }
+
+    .slide .conteudo p {
+        font-size: 14px;
+    }
+
+    .navegacao {
+        bottom: 10px;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        width: 10px;
+        height: 10px;
+    }
+
+    .titulo-diferenciais {
+        font-size: 20px;
+    }
+
+    .paragrafo {
+        font-size: 13px;
+    }
+
+    .cartoes-diferenciais {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .cartoes-diferenciais div {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .cartoes-diferenciais img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .cartoes-diferenciais p {
+        font-size: 13px;
+    }
+
+    .nossos-diferenciais {
+        padding: 30px 10px;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,139 @@
+/**
+ * ESTILOS DO RODAPÉ - Delta Vistoria
+ * Imagem de fundo com texto sobreposto
+ */
+
+/* ==================== RODAPÉ ESTILIZADO ==================== */
+footer {
+    width: 100%;
+    min-height: 250px;
+    position: relative;
+    margin-top: auto;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-image: url('/deltavistoria_projeto2/img/logo_rodape.png');
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Overlay escuro para melhorar legibilidade do texto */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 72, 0.70);
+    z-index: 1;
+}
+
+footer .container-footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.footer-logo {
+    flex-shrink: 0;
+    display: none;
+}
+
+.footer-logo-img {
+    height: 80px;
+    width: auto;
+    max-width: 250px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.05);
+}
+
+.footer-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.footer-content p:first-child {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+/* ==================== RESPONSIVIDADE RODAPÉ ==================== */
+@media (max-width: 1024px) {
+    footer {
+        background-size: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        min-height: 280px;
+        background-size: 60%;
+    }
+
+    footer .container-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+        padding: 40px 20px;
+    }
+
+    .footer-content {
+        gap: 10px;
+    }
+
+    .footer-content p {
+        font-size: 15px;
+    }
+
+    .footer-content p:first-child {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        min-height: 250px;
+        background-size: 70%;
+    }
+
+    footer .container-footer {
+        gap: 15px;
+        padding: 30px 15px;
+    }
+
+    .footer-content p {
+        font-size: 14px;
+    }
+
+    .footer-content p:first-child {
+        font-size: 15px;
+    }
+}
