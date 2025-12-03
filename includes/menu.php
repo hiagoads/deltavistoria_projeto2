@@ -75,7 +75,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
                     <!-- Menu para visitantes (site público) -->
                     <ul class="nav-menu">
                         <li><a href="<?php echo $base_url; ?>/public/index.php" class="<?php echo $pagina_atual == 'index.php' ? 'active' : ''; ?>">Início</a></li>
-                        <li><a href="<?php echo $base_url; ?>/public/principal.php" class="<?php echo $pagina_atual == 'principal.php' ? 'active' : ''; ?>">Serviços</a></li>
+                        <li><a href="<?php echo $base_url; ?>/public/principal.php#quem-somos" class="<?php echo $pagina_atual == 'principal.php' ? 'active' : ''; ?>">Quem Somos</a></li>
                         <li><a href="<?php echo $base_url; ?>/public/contato.php" class="<?php echo $pagina_atual == 'contato.php' ? 'active' : ''; ?>">Contato</a></li>
                         <li><a href="<?php echo $base_url; ?>/public/agendamento.php" class="<?php echo $pagina_atual == 'agendamento.php' ? 'active' : ''; ?>">Solicitar Vistoria</a></li>
                     </ul>

@@ -401,3 +401,436 @@
         gap: 20px;
     }
 }
+/* ==================== SEÇÃO QUEM SOMOS SIMPLES ==================== */
+.quem-somos-simples {
+    width: 100%;
+    padding: 80px 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #e8e8e8;
+}
+
+.container-quem-somos {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.titulo-quem-somos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1A1A48;
+    text-align: center;
+    margin: 0 0 10px 0;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.titulo-quem-somos::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #a52a2a;
+}
+
+.subtitulo-quem-somos {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    font-weight: 500;
+    margin: 0 0 40px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* História da Empresa */
+.historia-empresa {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.historia-empresa p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.historia-empresa p:last-child {
+    margin-bottom: 0;
+}
+
+.historia-empresa strong {
+    color: #1A1A48;
+    font-weight: 600;
+}
+
+/* Nossos Serviços */
+.nossos-servicos {
+    margin-top: 20px;
+}
+
+.nossos-servicos h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1A1A48;
+    text-align: center;
+    margin: 0 0 30px 0;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.nossos-servicos h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #a52a2a;
+}
+
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.servico-item {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e8e8e8;
+}
+
+.servico-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(165, 42, 42, 0.15);
+    border-color: #a52a2a;
+}
+
+.servico-icone {
+    font-size: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.servico-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1A48;
+    margin: 0 0 15px 0;
+}
+
+.servico-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Nossos Valores */
+.nossos-valores {
+    margin-top: 40px;
+}
+
+.nossos-valores h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1A1A48;
+    text-align: center;
+    margin: 0 0 30px 0;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.nossos-valores h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #a52a2a;
+}
+
+.valores-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.valor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.valor-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(165, 42, 42, 0.1);
+}
+
+.valor-marca {
+    color: #a52a2a;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.valor-texto {
+    flex: 1;
+}
+
+.valor-texto h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1A48;
+    margin: 0 0 5px 0;
+}
+
+.valor-texto p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Missão e Visão */
+.missao-visao-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.missao, .visao {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border-top: 4px solid #a52a2a;
+}
+
+.missao h3, .visao h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1A1A48;
+    margin: 0 0 15px 0;
+}
+
+.missao p, .visao p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Chamada para Ação */
+.chamada-acao {
+    background: #1A1A48;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.chamada-acao p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.botao-agendar {
+    display: inline-block;
+    background: #a52a2a;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid #a52a2a;
+}
+
+.botao-agendar:hover {
+    background: #8b2323;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(165, 42, 42, 0.3);
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 1024px) {
+    .quem-somos-simples {
+        padding: 60px 20px;
+    }
+    
+    .titulo-quem-somos {
+        font-size: 32px;
+    }
+    
+    .subtitulo-quem-somos {
+        font-size: 17px;
+    }
+    
+    .servicos-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .quem-somos-simples {
+        padding: 50px 15px;
+    }
+    
+    .titulo-quem-somos {
+        font-size: 28px;
+    }
+    
+    .subtitulo-quem-somos {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .historia-empresa {
+        padding: 25px;
+    }
+    
+    .historia-empresa p {
+        font-size: 15px;
+    }
+    
+    .nossos-servicos h3,
+    .nossos-valores h3 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    
+    .servicos-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .servico-item {
+        padding: 20px;
+    }
+    
+    .servico-item h4 {
+        font-size: 17px;
+    }
+    
+    .servico-item p {
+        font-size: 14px;
+    }
+    
+    .valores-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .missao-visao-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .chamada-acao {
+        padding: 25px 20px;
+    }
+    
+    .chamada-acao p {
+        font-size: 16px;
+    }
+    
+    .botao-agendar {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quem-somos-simples {
+        padding: 40px 10px;
+    }
+    
+    .titulo-quem-somos {
+        font-size: 24px;
+    }
+    
+    .subtitulo-quem-somos {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .historia-empresa {
+        padding: 20px;
+    }
+    
+    .historia-empresa p {
+        font-size: 14px;
+    }
+    
+    .servico-item {
+        padding: 15px;
+    }
+    
+    .servico-icone {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .valor-item {
+        padding: 15px;
+    }
+    
+    .missao, .visao {
+        padding: 20px;
+    }
+    
+    .chamada-acao {
+        padding: 20px 15px;
+    }
+    
+    .chamada-acao p {
+        font-size: 15px;
+    }
+}
